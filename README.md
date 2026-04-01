@@ -1,5 +1,3 @@
-# torch-pnas-splicing-model
-
 PyTorch implementation of pre-trained splicing model from "Deciphering RNA splicing logic with interpretable machine learning" (Liao et al., 2023). The manuscript is available [here](https://www.pnas.org/doi/abs/10.1073/pnas.2221165120). Train, test sequences are provided in the `data` directory.
 
 ## Requirements
