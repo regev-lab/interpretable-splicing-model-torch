@@ -327,8 +327,8 @@ class PNASModel(nn.Module):
         conv_struct_incl_out = conv_struct_incl_out[:, :, 2:-3]
 
         # Concatenated activations
-        activations_skip = self.energy_activation_incl(torch.cat([conv_skip_out, conv_struct_skip_out], dim=1))  # (batch_size, 28, 85)
-        activations_incl = self.energy_activation_skip(torch.cat([conv_incl_out, conv_struct_incl_out], dim=1))  # (batch_size, 28, 85)
+        activations_skip = self.energy_activation_skip(torch.cat([conv_skip_out, conv_struct_skip_out], dim=1))  # (batch_size, 28, 85)
+        activations_incl = self.energy_activation_incl(torch.cat([conv_incl_out, conv_struct_incl_out], dim=1))  # (batch_size, 28, 85)
 
         # Apply sum-difference
         energy_in = torch.stack([activations_incl, activations_skip], dim=1)  # (batch_size, 2, 28, 85)
